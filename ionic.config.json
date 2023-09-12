@@ -1,0 +1,7 @@
+{
+  "name": "ViajeVidaAR",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
