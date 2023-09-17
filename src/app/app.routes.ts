@@ -10,4 +10,8 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'ar-launcher',
+    loadComponent: () => import('./components/ar-launcher/ar-launcher.page').then( m => m.ArLauncherPage)
+  },
 ];

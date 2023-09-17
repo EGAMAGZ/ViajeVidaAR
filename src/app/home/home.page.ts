@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
+import { IonicModule, ModalController } from '@ionic/angular';
+import { ArLauncherPage } from '../components/ar-launcher/ar-launcher.page';
+import { Camera, PermissionStatus } from "@capacitor/camera";
 
 @Component({
   selector: 'app-home',
@@ -8,6 +10,28 @@ import { IonicModule } from '@ionic/angular';
   standalone: true,
   imports: [IonicModule],
 })
-export class HomePage {
-  constructor() {}
+export class HomePage implements OnInit {
+  constructor(
+    private modalController: ModalController,
+  ) {
+  }
+
+  ngOnInit(): void {
+    Camera.requestPermissions(
+      {
+        permissions: [
+          'camera',
+          'photos',
+        ]
+      }
+    );
+  }
+
+  async openAR() {
+    const modal: HTMLIonModalElement = await this.modalController.create({
+      component: ArLauncherPage,
+    });
+
+    return await modal.present();
+  }
 }
