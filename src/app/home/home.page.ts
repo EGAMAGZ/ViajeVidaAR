@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicModule, ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import { ArLauncherPage } from '../components/ar-launcher/ar-launcher.page';
-import { Camera, PermissionStatus } from "@capacitor/camera";
+import { Camera } from "@capacitor/camera";
+import { SharedModule } from '../shared/modules/shared/shared.module';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonicModule],
+  imports: [SharedModule],
 })
 export class HomePage implements OnInit {
   constructor(
