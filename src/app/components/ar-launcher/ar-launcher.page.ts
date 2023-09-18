@@ -2,7 +2,6 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, ModalController } from '@ionic/angular';
-import { generateARTemplate } from '@/app/shared/utils/template';
 
 @Component({
   selector: 'app-ar-launcher',
@@ -16,10 +15,7 @@ export class ArLauncherPage implements OnInit {
 
   constructor(
     private modalController: ModalController
-  ) {
-
-    console.log(generateARTemplate('/assets/templates/ar.njk', { debug: false, vrModeUi: false }));
-  }
+  ) { }
 
   ngOnInit() {
   }
