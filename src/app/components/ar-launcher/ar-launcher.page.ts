@@ -3,6 +3,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ModalController } from '@ionic/angular';
 import { SharedModule } from '@/app/shared/modules/shared/shared.module';
 import { generateArTemplate } from '@/app/shared/utils/template';
+import { environment } from "@/environments/environment";
 
 @Component({
   selector: 'app-ar-launcher',
@@ -20,10 +21,9 @@ export class ArLauncherPage implements OnInit {
     private modalController: ModalController,
     private domSanitizer: DomSanitizer
   ) {
-    const a = generateArTemplate({ debug: false, vrModeUI: false })
-    console.log()
-
-    this.iframeContent = domSanitizer.bypassSecurityTrustHtml(a)
+    this.iframeContent = domSanitizer.bypassSecurityTrustHtml(
+      generateArTemplate({ debug: !environment.production, vrModeUI: false })
+    )
   }
 
   ngOnInit() {
