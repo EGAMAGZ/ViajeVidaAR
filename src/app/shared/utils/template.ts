@@ -9,8 +9,8 @@ configure(
 const njkTemplate = `
 <!DOCTYPE html>
 <html>
-<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
-<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
+<script src="/assets/scripts/aframe.min.js"></script>
+<script src="/assets/scripts/aframe-ar.js"></script>
 
 <body style="margin: 0px; overflow: hidden;">
   <a-scene embedded arjs="debugUIEnabled: {{ debug }};" vr-mode-ui="enabled: {{ vrModeUI }};">
