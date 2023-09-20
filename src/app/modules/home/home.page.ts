@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { ArLauncherPage } from '../components/ar-launcher/ar-launcher.page';
+import { ArLauncherPage } from '@/app/components/ar-launcher/ar-launcher.page';
 import { Camera } from "@capacitor/camera";
-import { SharedModule } from '../shared/modules/shared/shared.module';
+import { SharedModule } from '@/app/shared/modules/shared/shared.module';
 
 @Component({
   selector: 'app-home',
