@@ -15,7 +15,7 @@ const njkTemplate = `
 <body style="margin: 0px; overflow: hidden;">
   <a-scene embedded arjs="debugUIEnabled: {{ debug }};" vr-mode-ui="enabled: {{ vrModeUI }};">
     <a-marker preset="hiro">
-      <a-image src="./../bunny.png" rotation="0 0 0" width="3" height="4"></a-image>
+      <a-image src="/assets/bunny.png" rotation="0 0 0" width="3" height="4"></a-image>
     </a-marker>
     <a-entity camera></a-entity>
   </a-scene>
