@@ -3,8 +3,8 @@ import { ModalController } from '@ionic/angular';
 import { ArLauncherPage } from '@/app/components/ar-launcher/ar-launcher.page';
 import { Camera } from "@capacitor/camera";
 import { SharedModule } from '@/app/shared/modules/shared/shared.module';
-import { environment } from "@/environments/environment";
 import { CommonModule } from '@angular/common';
+import { NavigationService } from '@/app/shared/services/navigation.service';
 
 @Component({
   selector: 'app-home',
@@ -19,6 +19,7 @@ import { CommonModule } from '@angular/common';
 export class HomePage implements OnInit {
   constructor(
     private modalController: ModalController,
+    private navigation: NavigationService
   ) { }
 
   ngOnInit(): void {
@@ -30,6 +31,10 @@ export class HomePage implements OnInit {
         ]
       }
     );
+  }
+
+  navigateCredits(){
+    this.navigation.goCredits()
   }
 
   async openAR() {
