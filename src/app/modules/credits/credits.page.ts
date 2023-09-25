@@ -22,7 +22,6 @@ export class CreditsPage implements OnInit {
   ngOnInit() {
   }
 
-
   navigateHome() {
     this.navigation.goHome();
   }
