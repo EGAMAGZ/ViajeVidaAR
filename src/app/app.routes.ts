@@ -4,7 +4,7 @@ import { AppModules } from './routing/app-modules';
 
 export const routes: Routes = [
   {
-    path: 'home',
+    path: AppModules.home.id,
     loadComponent: () => import('./modules/home/home.page').then((m) => m.HomePage),
   },
   {
@@ -13,8 +13,11 @@ export const routes: Routes = [
     redirectTo: NavigationUtils.getRoute(AppModules.home, null)
   },
   {
-    path: 'credits',
+    path: AppModules.credits.id,
     loadComponent: () => import('./modules/credits/credits.page').then(m => m.CreditsPage)
   },
-
+  {
+    path: AppModules.travel.id,
+    loadChildren: () => import('./modules/travel/travel.routes').then(m => m.routes)
+  }
 ];
