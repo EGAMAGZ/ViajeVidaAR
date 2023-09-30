@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { NavigationUtils } from '../utils/navigation';
 import { AppModules } from '@/app/routing/app-modules';
+import { TravelRoutes } from '@/app/modules/travel/routing/travel-routes';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,35 @@ export class NavigationService {
       NavigationUtils.getRoute(
         AppModules.home,
         null
+      )
+    )
+  }
+
+  goTravelHome() {
+    this.navigate(
+      NavigationUtils.getRoute(
+        AppModules.travel,
+        TravelRoutes.menu
+      )
+    )
+  }
+
+  goTravelArtwork(id: number) {
+    console.log(NavigationUtils.getRoute(
+      AppModules.travel,
+      TravelRoutes.artwork,
+      {
+        "id": id
+      }
+    ));
+
+    this.navigate(
+      NavigationUtils.getRoute(
+        AppModules.travel,
+        TravelRoutes.artwork,
+        {
+          "id": id
+        }
       )
     )
   }

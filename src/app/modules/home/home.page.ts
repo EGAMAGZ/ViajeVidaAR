@@ -33,8 +33,11 @@ export class HomePage implements OnInit {
     );
   }
 
-  navigateCredits(){
+  navigateCredits() {
     this.navigation.goCredits()
+  }
+  navigateTravelMenu() {
+    this.navigation.goTravelHome()
   }
 
   async openAR() {

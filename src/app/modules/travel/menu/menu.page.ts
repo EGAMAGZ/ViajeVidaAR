@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '@/app/shared/modules/shared/shared.module';
+import { NavigationService } from '@/app/shared/services/navigation.service';
 
 @Component({
   selector: 'app-menu',
@@ -11,9 +12,14 @@ import { SharedModule } from '@/app/shared/modules/shared/shared.module';
 })
 export class MenuPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private navigation: NavigationService
+  ) { }
 
   ngOnInit() {
   }
 
+  navigateTravelArtwork(id: number) {
+    this.navigation.goTravelArtwork(id)
+  }
 }

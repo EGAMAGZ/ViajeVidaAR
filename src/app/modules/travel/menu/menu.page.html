@@ -3,14 +3,12 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>menu</ion-title>
+    <ion-title>Menu - Obras de arte</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-button (click)="navigateTravelArtwork(2)">
+    Show art
+  </ion-button>
 </ion-content>
