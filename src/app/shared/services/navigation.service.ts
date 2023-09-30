@@ -49,14 +49,6 @@ export class NavigationService {
   }
 
   goTravelArtwork(id: number) {
-    console.log(NavigationUtils.getRoute(
-      AppModules.travel,
-      TravelRoutes.artwork,
-      {
-        "id": id
-      }
-    ));
-
     this.navigate(
       NavigationUtils.getRoute(
         AppModules.travel,

@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { ArLauncherPage } from '@/app/components/ar-launcher/ar-launcher.page';
 import { Camera } from "@capacitor/camera";
 import { SharedModule } from '@/app/shared/modules/shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { NavigationService } from '@/app/shared/services/navigation.service';
+import { environment } from "@/environments/environment";
 
 @Component({
   selector: 'app-home',
@@ -17,8 +16,10 @@ import { NavigationService } from '@/app/shared/services/navigation.service';
   ],
 })
 export class HomePage implements OnInit {
+
+  isDebugMode: boolean = !environment.production;
+
   constructor(
-    private modalController: ModalController,
     private navigation: NavigationService
   ) { }
 
@@ -38,13 +39,5 @@ export class HomePage implements OnInit {
   }
   navigateTravelMenu() {
     this.navigation.goTravelHome()
-  }
-
-  async openAR() {
-    const modal: HTMLIonModalElement = await this.modalController.create({
-      component: ArLauncherPage,
-    });
-
-    return await modal.present();
   }
 }
