@@ -7,8 +7,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-button (click)="navigateTravelArtwork(2)">
-    Show art
-  </ion-button>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-accordion-group>
+    <ion-accordion *ngFor="let stage of STAGES_OF_LIFE">
+      <ion-item slot="header" color="light">
+        <ion-label>{{ stage.name }}</ion-label>
+      </ion-item>
+      <ion-list slot="content">
+        <ion-item *ngFor="let paint of stage.paints" button (click)="navigateTravelArtwork(paint.id)">
+          <ion-label>{{ paint.name }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-accordion>
+  </ion-accordion-group>
 </ion-content>
