@@ -7,8 +7,7 @@ configure(
 )
 
 // TODO: Sustituir a-image (2D) por a-entity (3D)
-const njkTemplate = `
-<!DOCTYPE html>
+const njkTemplate = `<!DOCTYPE html>
 <html>
 <script src="/assets/scripts/aframe.min.js"></script>
 <script src="/assets/scripts/aframe-ar.js"></script>
@@ -22,6 +21,7 @@ const njkTemplate = `
 </body>
 
 </html>`;
+
 type ArTemplateParams = {
   debug: boolean;
   vrModeUI: boolean;
