@@ -25,9 +25,6 @@ export class ArtworkPage implements OnInit {
     private route: ActivatedRoute,
     private domSanitizer: DomSanitizer
   ) {
-    this.iframeContent = domSanitizer.bypassSecurityTrustHtml(
-      generateArTemplate({ debug: this.isDebugMode(), vrModeUI: false })
-    )
   }
 
   ngOnInit() {
@@ -37,6 +34,10 @@ export class ArtworkPage implements OnInit {
       this.artwork.set(
         allArtworks.find(artwork => artwork.id === Number(param["id"]))
       );
+
+      this.iframeContent = this.domSanitizer.bypassSecurityTrustHtml(
+        generateArTemplate({ debug: this.isDebugMode(), vrModeUI: false, modelPath: this.artwork()?.modelPath ?? "/assets/bunny.png" })
+      )
     });
   }
 

@@ -6,6 +6,7 @@ configure(
   }
 )
 
+// TODO: Sustituir a-image (2D) por a-entity (3D)
 const njkTemplate = `
 <!DOCTYPE html>
 <html>
@@ -13,11 +14,10 @@ const njkTemplate = `
 <script src="/assets/scripts/aframe-ar.js"></script>
 
 <body style="margin: 0px; overflow: hidden;">
-  <a-scene embedded arjs="debugUIEnabled: {{ debug }};" vr-mode-ui="enabled: {{ vrModeUI }};">
+  <a-scene embedded arjs="debugUIEnabled: {{ debug }};" vr-mode-ui="enabled: {{ vrModeUI }}; trackingMethod: best;">
     <a-marker preset="hiro">
-      <a-image src="/assets/bunny.png" rotation="-90 0 0" width="3" height="4"></a-image>
+      <a-image src="{{ modelPath }}" rotation="-90 0 0" width="4" height="4"></a-image>
     </a-marker>
-    <a-entity camera></a-entity>
   </a-scene>
 </body>
 
@@ -25,6 +25,7 @@ const njkTemplate = `
 type ArTemplateParams = {
   debug: boolean;
   vrModeUI: boolean;
+  modelPath: string;
 }
 
 export function generateArTemplate(params: ArTemplateParams): string {
