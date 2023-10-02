@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { SharedModule } from '@/app/shared/modules/shared/shared.module';
 import { environment } from '@/environments/environment';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { generateArTemplate } from '@/app/shared/utils/template';
+import { Artwork, allArtworks } from '@/app/data/artworks';
 
 @Component({
   selector: 'app-artwork',
@@ -14,24 +15,29 @@ import { generateArTemplate } from '@/app/shared/utils/template';
   imports: [SharedModule, CommonModule]
 })
 export class ArtworkPage implements OnInit {
+  iframeContent: SafeHtml | undefined
 
-  artworkId: number | undefined
-  iframeContent: SafeHtml
-  isDebugMode: boolean = !environment.production
+  isDebugMode = signal(!environment.production)
+  artworkId = signal<number | undefined>(undefined)
+  artwork = signal<Artwork | undefined>(undefined)
 
   constructor(
     private route: ActivatedRoute,
     private domSanitizer: DomSanitizer
   ) {
     this.iframeContent = domSanitizer.bypassSecurityTrustHtml(
-      generateArTemplate({ debug: this.isDebugMode, vrModeUI: false })
+      generateArTemplate({ debug: this.isDebugMode(), vrModeUI: false })
     )
   }
 
   ngOnInit() {
     this.route.params.subscribe(param => {
-      this.artworkId = Number(param["id"])
-    })
+      this.artworkId.set(Number(param["id"]));
+
+      this.artwork.set(
+        allArtworks.find(artwork => artwork.id === Number(param["id"]))
+      );
+    });
   }
 
 }

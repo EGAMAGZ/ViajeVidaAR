@@ -1,4 +1,4 @@
-export interface Paint {
+export interface Artwork {
   id: number;
   name: string;
   description: string;
@@ -6,7 +6,7 @@ export interface Paint {
   model: string;
 }
 
-export const chilhoodPaints: Paint[] = [
+export const chilhoodArtworks: Artwork[] = [
   {
     id: 1,
     name: "El niño azul",
@@ -44,7 +44,7 @@ export const chilhoodPaints: Paint[] = [
   }
 ];
 
-export const adolescencePaints: Paint[] = [
+export const adolescenceArtworks: Artwork[] = [
   {
     id: 6,
     name: "El beso",
@@ -75,7 +75,7 @@ export const adolescencePaints: Paint[] = [
   }
 ];
 
-export const adulthoodPaints: Paint[] = [
+export const adulthoodArtworks: Artwork[] = [
   {
     id: 10,
     name: "Retrato del papa Inocencio X",
@@ -106,7 +106,7 @@ export const adulthoodPaints: Paint[] = [
   }
 ];
 
-export const oldAgePaints: Paint[] = [
+export const oldAgeArtworks: Artwork[] = [
   {
     id: 14,
     name: "Los viejos músicos",
@@ -137,9 +137,9 @@ export const oldAgePaints: Paint[] = [
   }
 ];
 
-export const allPaints: Paint[] = [
-  chilhoodPaints,
-  adolescencePaints,
-  adulthoodPaints,
-  oldAgePaints
+export const allArtworks: Artwork[] = [
+  chilhoodArtworks,
+  adolescenceArtworks,
+  adulthoodArtworks,
+  oldAgeArtworks
 ].flat()

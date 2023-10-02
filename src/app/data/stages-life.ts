@@ -1,28 +1,28 @@
-import { Paint, adolescencePaints, adulthoodPaints, chilhoodPaints, oldAgePaints } from "./paints"
+import { Artwork, adolescenceArtworks, adulthoodArtworks, chilhoodArtworks, oldAgeArtworks } from "./artworks"
 
 export interface StageOfLife {
   name: string
-  paints: Paint[]
+  artworks: Artwork[]
 }
 
 const childhood: StageOfLife = {
   name: "Niñez",
-  paints: chilhoodPaints
+  artworks: chilhoodArtworks
 }
 
 const adolescence: StageOfLife = {
   name: "Adolescencia",
-  paints: adolescencePaints
+  artworks: adolescenceArtworks
 }
 
 const adulthood: StageOfLife = {
   name: "Adultez",
-  paints: adulthoodPaints
+  artworks: adulthoodArtworks
 }
 
 const oldAge: StageOfLife = {
   name: "Vejez",
-  paints: oldAgePaints
+  artworks: oldAgeArtworks
 }
 const stagesOfLife: StageOfLife[] = [
   childhood,
