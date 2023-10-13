@@ -13,4 +13,8 @@ export class AppModules {
     id: "travel",
     description: "Página de obras de arte"
   }
+  static readonly instructions: ModuleContext = {
+    id: "instructions",
+    description: "Pagina con las instrucciones de uso"
+  }
 }

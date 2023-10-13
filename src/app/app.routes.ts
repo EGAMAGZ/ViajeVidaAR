@@ -19,5 +19,9 @@ export const routes: Routes = [
   {
     path: AppModules.travel.id,
     loadChildren: () => import('./modules/travel/travel.routes').then(m => m.routes)
+  },  {
+    path: 'instructions',
+    loadComponent: () => import('./modules/instructions/instructions.page').then( m => m.InstructionsPage)
   }
+
 ];

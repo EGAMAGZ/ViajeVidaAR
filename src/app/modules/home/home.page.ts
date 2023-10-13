@@ -40,4 +40,8 @@ export class HomePage implements OnInit {
   navigateTravelMenu() {
     this.navigation.goTravelHome()
   }
+
+  navigateInstructions() {
+    this.navigation.goInstructions()
+  }
 }

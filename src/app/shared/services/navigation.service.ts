@@ -48,6 +48,15 @@ export class NavigationService {
     )
   }
 
+  goInstructions() {
+    this.navigate(
+      NavigationUtils.getRoute(
+        AppModules.instructions,
+        null
+      )
+    )
+  }
+
   goTravelArtwork(id: number) {
     this.navigate(
       NavigationUtils.getRoute(
