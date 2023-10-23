@@ -19,7 +19,7 @@ export const chilhoodArtworks: Artwork[] = [
     name: "Las dos hermanas",
     description: '"Las dos hermanas" (1881) de Pierre-Auguste Renoir: Esta obra muestra a dos niñas, probablemente hermanas, en un jardín. El cuadro transmite una sensación de complicidad y afecto entre las dos hermanas, capturando la esencia de la relación entre hermanos en la infancia.',
     markerPath: "",
-    modelPath: "/assets/img/artworks/childhood/Las_dos_hermanas.jpeg"
+    modelPath: "/assets/img/artworks/childhood/Las_dos_hermanas.jpg"
   },
   {
     id: 3,
