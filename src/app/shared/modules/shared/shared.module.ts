@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -13,6 +14,7 @@ import { IonicModule } from '@ionic/angular';
   exports: [
     CommonModule,
     IonicModule,
+    HttpClientModule
   ]
 })
 export class SharedModule { }
