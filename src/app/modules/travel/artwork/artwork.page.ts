@@ -44,7 +44,13 @@ export class ArtworkPage implements OnInit {
 
         this.iframeContent.set(
           this.domSanitizer.bypassSecurityTrustHtml(
-            generateArTemplate(data, { debug: this.isDebugMode(), vrModeUI: false, modelPath: this.artwork()?.modelPath ?? "/assets/bunny.png" })
+            generateArTemplate(data, {
+              debug: this.isDebugMode(),
+              vrModeUI: false,
+              modelPath: this.artwork()?.modelPath ?? "/assets/bunny.png",
+              description: this.artwork()?.description ?? "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+              name: this.artwork()?.name ?? "Obra de Arte"
+            })
           )
         )
       });

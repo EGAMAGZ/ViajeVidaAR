@@ -57,7 +57,9 @@
   <div class="panel-overlay" x-bind="panel">
     <div class="info-panel" x-bind="infoPanel" x-transition>
       <span class="info-panel__title">Informacioón de la obra:</span>
-      <p>{{ description }}</sp>
+      <p>"El niño azul" (1770) de Thomas Gainsborough: Esta pintura muestra a un niño vestido de azul con un sombrero de
+        paja, rodeado de un paisaje campestre sereno. Es una representación icónica de la inocencia y la serenidad
+        infantil.</sp>
     </div>
     <div class="info-button__container">
       <button class="info-button" x-bind="infoButton"></button>
@@ -69,7 +71,7 @@
     </a-assets>
     <a-marker preset="hiro" id="marker" x-bind="marker">
       <a-box src="#frame" position="0 0 0" width="5" height="0.1" depth="5" color="#231709"></a-box>
-      <a-image src="{{ modelPath }}" position="0 0.3 0" rotation="-90 0 0" width="4"
+      <a-image src="/assets/img/artworks/childhood/El_nino_azul.jpg" position="0 0.3 0" rotation="-90 0 0" width="4"
         height="4"></a-image>
     </a-marker>
   </a-scene>
