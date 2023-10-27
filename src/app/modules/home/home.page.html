@@ -8,12 +8,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>¡Bienvenido a Viaje de la Vida!</ion-card-title>
-      <ion-card-subtitle>Esperamos sea de tu agrado</ion-card-subtitle>
-    </ion-card-header>
-  </ion-card>
+  <div class="min-h-screen hero bg-base-200">
+    <div class="flex-col hero-content lg:flex-row">
+      <img alt="App logo" src="assets/icon/favicon.jpg" class="rounded-lg shadow-2xl md:max-w-sm" />
+      <div>
+        <h1 class="text-5xl font-bold">¡Bienvenido a Viaje de la Vida!</h1>
+        <p class="py-6">Esperamos sea de tu agrado esta experiencia.</p>
+      </div>
+    </div>
+  </div>
   <ion-list [inset]="true">
     <ion-list-header>
       <ion-label>Menu</ion-label>
