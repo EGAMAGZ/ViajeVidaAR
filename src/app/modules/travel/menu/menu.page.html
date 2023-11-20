@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Menu - Obras de arte</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-accordion-group>
+    <ion-accordion *ngFor="let stage of STAGES_OF_LIFE">
+      <ion-item slot="header" color="light">
+        <ion-label>{{ stage.name }}</ion-label>
+      </ion-item>
+      <ion-list slot="content">
+        <ion-item *ngFor="let paint of stage.artworks" button (click)="navigateTravelArtwork(paint.id)">
+          <ion-label>{{ paint.name }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-accordion>
+  </ion-accordion-group>
+</ion-content>
