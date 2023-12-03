@@ -57,7 +57,7 @@
     <div class="panel-overlay" x-bind="panel">
       <div class="info-panel" x-bind="infoPanel" x-transition>
         <span class="info-panel__title">Informacioón de la obra:</span>
-        <p>{{ description }}</sp>
+        <p>{{ artwork.description }}</sp>
       </div>
       <div class="info-button__container">
         <button class="info-button" x-bind="infoButton"></button>
@@ -69,7 +69,7 @@
       </a-assets>
       <a-marker preset="hiro" id="marker" x-bind="marker">
         <a-box src="#frame" position="0 0 -2" width="3" height="0.1" depth="3" color="#231709"></a-box>
-        <a-image src="{{ modelPath }}" position="0 0.3 -2" rotation="-90 0 0" width="2"
+        <a-image src="{{ artwork.modelPath }}" position="0 0.3 -2" rotation="-90 0 0" width="2"
         height="2"></a-image>
       </a-marker>
     </a-scene>

@@ -1,3 +1,4 @@
+import { Artwork } from "@/app/data/artworks";
 import { renderString, configure } from "nunjucks";
 
 configure(
@@ -6,12 +7,11 @@ configure(
   }
 )
 
+
 type ArTemplateParams = {
   debug: boolean;
   vrModeUI: boolean;
-  modelPath: string;
-  name: string;
-  description: string;
+  artwork: Artwork;
 }
 
 export function generateArTemplate(template: string, params: ArTemplateParams): string {

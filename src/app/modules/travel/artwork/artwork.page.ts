@@ -8,6 +8,14 @@ import { generateArTemplate } from '@/app/shared/utils/template';
 import { Artwork, allArtworks } from '@/app/data/artworks';
 import { TemplateHttpLoaderService } from '@/app/shared/services/template-http-loader.service';
 
+const DEFAULT_ARTWORK: Artwork = {
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  id: 0,
+  markerPath: "",
+  modelPath: "/assets/bunny.png",
+  name: "Obra de Arte"
+}
+
 @Component({
   selector: 'app-artwork',
   templateUrl: './artwork.page.html',
@@ -40,16 +48,14 @@ export class ArtworkPage implements OnInit {
         allArtworks.find(artwork => artwork.id === Number(param["id"]))
       );
 
-      this.templateLoader.loadArTemplate().subscribe((data) => {
+      this.templateLoader.loadArTemplate().subscribe((template) => {
 
         this.iframeContent.set(
           this.domSanitizer.bypassSecurityTrustHtml(
-            generateArTemplate(data, {
+            generateArTemplate(template, {
               debug: this.isDebugMode(),
               vrModeUI: false,
-              modelPath: this.artwork()?.modelPath ?? "/assets/bunny.png",
-              description: this.artwork()?.description ?? "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-              name: this.artwork()?.name ?? "Obra de Arte"
+              artwork: this.artwork() ?? DEFAULT_ARTWORK
             })
           )
         )

@@ -4,6 +4,8 @@ export interface Artwork {
   description: string;
   markerPath: string;
   modelPath: string;
+  width?: number;
+  height?: number;
 }
 
 export const chilhoodArtworks: Artwork[] = [
