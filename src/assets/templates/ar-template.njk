@@ -54,7 +54,7 @@
 </style>
 
 <body style="margin: 0px; overflow: hidden; height: 100%;" x-init="console.log('Inicializado')" x-data="appData">
-  <div class="panel-overlay" x-bind="panel">
+  <div class="panel-overlay" x-bind="panel" x-cloak>
     <div class="info-panel" x-bind="infoPanel" x-transition>
       <span class="info-panel__title">Informacioón de la obra:</span>
       <p>{{ artwork.description }}</sp>
@@ -68,11 +68,9 @@
       <img id="frame" src="assets/textures/wood.jpg">
     </a-assets>
     <a-marker preset="hiro" id="marker" x-bind="marker">
-      <a-box src="#frame" position="0 0 -2"
-        width="{{ artwork.dimensions.width + 0.5}}" height="0.1" depth="{{ artwork.dimensions.height + 0.5 }}"
-        color="#231709"></a-box>
-      <a-image src="{{ artwork.modelPath }}"
-        position="0 0.3 -2"
+      <a-box src="#frame" position="0 0 -2" width="{{ artwork.dimensions.width + 0.5}}" height="0.1"
+        depth="{{ artwork.dimensions.height + 0.5 }}" color="#231709"></a-box>
+      <a-image src="{{ artwork.modelPath }}" position="0 0.3 -2"
         rotation="{% if artwork.rotation %}{{ artwork.rotation }}{% else %}-90 0 0{% endif %}"
         width="{{ artwork.dimensions.width }}" height="{{ artwork.dimensions.height }}">
       </a-image>
