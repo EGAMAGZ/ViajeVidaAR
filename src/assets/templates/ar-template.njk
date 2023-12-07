@@ -68,11 +68,11 @@
       <img id="frame" src="assets/textures/wood.jpg">
     </a-assets>
     <a-marker preset="hiro" id="marker" x-bind="marker">
-      <a-box src="#frame" position="{{ artwork.position.x }} 0 {{ artwork.position.z }}"
+      <a-box src="#frame" position="0 0 -2"
         width="{{ artwork.dimensions.width + 0.5}}" height="0.1" depth="{{ artwork.dimensions.height + 0.5 }}"
         color="#231709"></a-box>
       <a-image src="{{ artwork.modelPath }}"
-        position="{{ artwork.position.x }} {{ artwork.position.y }} {{ artwork.position.z }}"
+        position="0 0.3 -2"
         rotation="{% if artwork.rotation %}{{ artwork.rotation }}{% else %}-90 0 0{% endif %}"
         width="{{ artwork.dimensions.width }}" height="{{ artwork.dimensions.height }}">
       </a-image>

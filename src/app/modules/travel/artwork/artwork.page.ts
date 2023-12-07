@@ -19,11 +19,6 @@ const DEFAULT_ARTWORK: Artwork = {
     width: 2,
     height: 2
   },
-  position: {
-    x: 0,
-    y: 0.3,
-    z: -2
-  }
 }
 
 @Component({

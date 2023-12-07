@@ -3,12 +3,6 @@ type Dimensions = {
   height: number;
 }
 
-type Position = {
-  x: number;
-  y: number;
-  z: number;
-}
-
 type Rotation = {
   x: number;
   y: number;
@@ -22,7 +16,6 @@ export interface Artwork {
   markerPath: string;
   modelPath: string;
   dimensions: Dimensions;
-  position: Position;
   rotation?: Rotation
 }
 
@@ -37,11 +30,6 @@ export const chilhoodArtworks: Artwork[] = [
       height: 3,
       width: 2
     },
-    position: {
-      x: 0,
-      y: 0.3,
-      z: -2
-    }
   },
   {
     id: 2,
@@ -53,11 +41,6 @@ export const chilhoodArtworks: Artwork[] = [
       height: 2,
       width: 2
     },
-    position: {
-      x: 0,
-      y: 0.3,
-      z: -2
-    }
   },
   {
     id: 3,
@@ -69,11 +52,6 @@ export const chilhoodArtworks: Artwork[] = [
       height: 2,
       width: 2
     },
-    position: {
-      x: 0,
-      y: 0.3,
-      z: -2
-    }
   },
   {
     id: 4,
@@ -85,11 +63,6 @@ export const chilhoodArtworks: Artwork[] = [
       height: 3,
       width: 2
     },
-    position: {
-      x: 0,
-      y: 0.3,
-      z: -2
-    }
   },
   {
     id: 5,
@@ -101,11 +74,6 @@ export const chilhoodArtworks: Artwork[] = [
       height: 2,
       width: 2
     },
-    position: {
-      x: 0,
-      y: 0.3,
-      z: -2
-    }
   }
 ];
 
@@ -120,11 +88,6 @@ export const adolescenceArtworks: Artwork[] = [
       height: 2,
       width: 2
     },
-    position: {
-      x: 0,
-      y: 0.3,
-      z: -2
-    }
   },
   {
     id: 7,
@@ -136,11 +99,6 @@ export const adolescenceArtworks: Artwork[] = [
       height: 3,
       width: 2
     },
-    position: {
-      x: 0,
-      y: 0.3,
-      z: -2
-    }
   },
   {
     id: 8,
@@ -152,11 +110,6 @@ export const adolescenceArtworks: Artwork[] = [
       height: 2,
       width: 3
     },
-    position: {
-      x: 0,
-      y: 0.3,
-      z: -2
-    }
   },
   {
     id: 9,
@@ -168,11 +121,6 @@ export const adolescenceArtworks: Artwork[] = [
       height: 2,
       width: 2.5
     },
-    position: {
-      x: 0,
-      y: 0.3,
-      z: -2
-    }
   }
 ];
 
@@ -187,11 +135,6 @@ export const adulthoodArtworks: Artwork[] = [
       height: 3,
       width: 2.5
     },
-    position: {
-      x: 0,
-      y: 0.3,
-      z: -2
-    }
   },
   {
     id: 11,
@@ -203,11 +146,6 @@ export const adulthoodArtworks: Artwork[] = [
       height: 4,
       width: 2
     },
-    position: {
-      x: 0,
-      y: 0.3,
-      z: -2
-    }
   },
   {
     id: 12,
@@ -219,11 +157,6 @@ export const adulthoodArtworks: Artwork[] = [
       height: 2.5,
       width: 2
     },
-    position: {
-      x: 0,
-      y: 0.3,
-      z: -2
-    }
   },
   {
     id: 13,
@@ -235,11 +168,6 @@ export const adulthoodArtworks: Artwork[] = [
       height: 2.5,
       width: 2
     },
-    position: {
-      x: 0,
-      y: 0.3,
-      z: -2
-    }
   }
 ];
 
@@ -254,11 +182,6 @@ export const oldAgeArtworks: Artwork[] = [
       height: 2,
       width: 3.5
     },
-    position: {
-      x: 0,
-      y: 0.3,
-      z: -2
-    }
   },
   {
     id: 15,
@@ -270,11 +193,6 @@ export const oldAgeArtworks: Artwork[] = [
       height: 2.2,
       width: 2
     },
-    position: {
-      x: 0,
-      y: 0.3,
-      z: -2
-    }
   },
   {
     id: 16,
@@ -286,11 +204,6 @@ export const oldAgeArtworks: Artwork[] = [
       height: 2,
       width: 2.5
     },
-    position: {
-      x: 0,
-      y: 0.3,
-      z: -2
-    }
   },
   {
     id: 17,
@@ -302,11 +215,6 @@ export const oldAgeArtworks: Artwork[] = [
       height: 2.2,
       width: 2
     },
-    position: {
-      x: 0,
-      y: 0.3,
-      z: -2
-    }
   }
 ];
 
