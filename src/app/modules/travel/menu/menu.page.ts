@@ -22,6 +22,9 @@ export class MenuPage implements OnInit {
 
   ngOnInit() {
   }
+  navigateHome() {
+    this.navigation.goHome()
+  }
 
   navigateTravelArtwork(id: number) {
     this.navigation.goTravelArtwork(id)

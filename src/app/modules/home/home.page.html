@@ -1,34 +1,40 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-title class="flex items-center">
-      Viaje de la vida AR
-      <ion-badge color="warning" *ngIf="isDebugMode">Debug</ion-badge>
-    </ion-title>
-  </ion-toolbar>
+  <nav class="navbar bg-neutral">
+    <div class="flex items-center justify-center flex-1 gap-4 text-xl font-semibold">
+      <span>
+        Viaje de la Vida AR
+      </span>
+      @if (isDebugMode()) {
+      <div class="badge badge-warning">
+        Debug
+      </div>
+      }
+    </div>
+  </nav>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <div class="min-h-screen hero bg-base-200">
-    <div class="flex-col hero-content lg:flex-row">
-      <img alt="App logo" src="assets/icon/favicon.jpg" class="rounded-lg shadow-2xl md:max-w-sm" />
-      <div>
-        <h1 class="text-5xl font-bold">¡Bienvenido a Viaje de la Vida!</h1>
-        <p class="py-6">Esperamos sea de tu agrado esta experiencia.</p>
+  <div class="flex flex-col gap-4">
+    <div class="min-h-screen rounded-box hero bg-neutral">
+      <div class="flex-col hero-content lg:flex-row">
+        <img alt="App logo" src="assets/icon/favicon.jpg" class="rounded-lg md:max-w-sm" />
+        <div>
+          <h1 class="text-4xl font-bold">¡Bienvenido a Viaje de la Vida!</h1>
+          <p class="py-6 text-xl">Esperamos sea de tu agrado esta experiencia.</p>
+        </div>
       </div>
     </div>
+    <ul class="menu bg-neutral rounded-box">
+      <li class="text-2xl menu-title">Menu</li>
+      <li>
+        <a (click)="navigateTravelMenu()" class="text-lg">Iniciar viaje</a>
+      </li>
+      <li>
+        <a (click)="navigateInstructions()" class="text-lg">Instrucciones</a>
+      </li>
+      <li>
+        <a (click)=" navigateCredits()" class="text-lg">Creditos</a>
+      </li>
+    </ul>
   </div>
-  <ion-list [inset]="true">
-    <ion-list-header>
-      <ion-label>Menu</ion-label>
-    </ion-list-header>
-    <ion-item button (click)="navigateTravelMenu()">
-      <ion-label>Iniciar Viaje</ion-label>
-    </ion-item>
-    <ion-item button (click)="navigateInstructions()">
-      <ion-label>Instrucciones</ion-label>
-    </ion-item>
-    <ion-item button (click)=" navigateCredits()">
-      <ion-label>Créditos</ion-label>
-    </ion-item>
-  </ion-list>
 </ion-content>
