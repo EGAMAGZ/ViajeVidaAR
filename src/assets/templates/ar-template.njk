@@ -63,7 +63,8 @@
       <button class="info-button" x-bind="infoButton"></button>
     </div>
   </div>
-  <a-scene embedded arjs="debugUIEnabled: {{ debug }};" vr-mode-ui="enabled: {{ vrModeUI }}; trackingMethod: best;">
+  <a-scene embedded arjs="debugUIEnabled: {{ debug }}; trackingMethod: best;" vr-mode-ui="enabled: {{ vrModeUI }};"
+    renderer="logarithmicDepthBuffer: true;antialias: true;">
     <a-assets>
       <img id="frame" src="assets/textures/wood.jpg">
     </a-assets>
