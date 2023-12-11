@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { Camera } from "@capacitor/camera";
 import { SharedModule } from '@/app/shared/modules/shared/shared.module';
 import { CommonModule } from '@angular/common';
@@ -17,7 +17,7 @@ import { environment } from "@/environments/environment";
 })
 export class HomePage implements OnInit {
 
-  isDebugMode: boolean = !environment.production;
+  isDebugMode = signal(!environment.production);
 
   constructor(
     private navigation: NavigationService
@@ -38,7 +38,7 @@ export class HomePage implements OnInit {
     this.navigation.goCredits()
   }
   navigateTravelMenu() {
-    this.navigation.goTravelHome()
+    this.navigation.goTravelMenu()
   }
 
   navigateInstructions() {

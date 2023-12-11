@@ -39,7 +39,7 @@ export class NavigationService {
     )
   }
 
-  goTravelHome() {
+  goTravelMenu() {
     this.navigate(
       NavigationUtils.getRoute(
         AppModules.travel,
@@ -70,7 +70,7 @@ export class NavigationService {
   }
 
   canGoBack(): boolean {
-    return this.navigate.length > 0
+    return this.navigationStack.length > 0
   }
 
   navigate(route: string) {

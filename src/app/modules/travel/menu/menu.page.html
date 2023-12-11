@@ -1,23 +1,39 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>Menu - Obras de arte</ion-title>
-  </ion-toolbar>
+<ion-header>
+  <nav class="gap-2 navbar bg-neutral">
+    <div class="flex-none">
+      <button class="btn btn-squarebtn-ghost" (click)="navigateHome()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24"
+          viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M15 6l-6 6l6 6" />
+        </svg>
+      </button>
+    </div>
+    <div class="flex-1">
+      <span class="text-xl font-semibold">Menu - Obras de Arte</span>
+    </div>
+  </nav>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <ion-accordion-group>
-    <ion-accordion *ngFor="let stage of STAGES_OF_LIFE">
-      <ion-item slot="header" color="light">
-        <ion-label>{{ stage.name }}</ion-label>
-      </ion-item>
-      <ion-list slot="content">
-        <ion-item *ngFor="let paint of stage.artworks" button (click)="navigateTravelArtwork(paint.id)">
-          <ion-label>{{ paint.name }}</ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-accordion>
-  </ion-accordion-group>
+  <div class="w-full join join-vertical">
+    @for (stage of STAGES_OF_LIFE; track $index) {
+    <div class="border collapse collapse-arrow join-item border-base-300 bg-neutral">
+      <input type="radio" name="artwork" />
+      <div class="text-xl font-medium collapse-title">
+        {{ stage.name }}
+      </div>
+      <div class="collapse-content">
+        <div class="w-full join join-vertical">
+          @for (paint of stage.artworks; track $index) {
+          <button class="btn join-item " (click)="navigateTravelArtwork(paint.id)">
+            <span>{{ paint.name }}</span>
+          </button>
+          }
+        </div>
+      </div>
+    </div>
+    }
+  </div>
 </ion-content>
