@@ -68,16 +68,22 @@
     <a-assets>
       <img id="frame" src="assets/textures/wood.jpg">
     </a-assets>
-    <a-marker preset="hiro" id="marker" x-bind="marker">
+    <a-marker type="pattern" id="marker" x-bind="marker" url="{{ artwork.markerPath }}">
       <a-box src="#frame" position="0 0 -2" width="{{ artwork.dimensions.width + 0.5}}" height="0.1"
         depth="{{ artwork.dimensions.height + 0.5 }}" color="#231709"></a-box>
-      <a-image src="{{ artwork.modelPath }}" position="0 0.3 -2"
+      <a-image src="{{ artwork.imagePath }}" position="0 0.3 -2"
         rotation="{% if artwork.rotation %}{{ artwork.rotation }}{% else %}-90 0 0{% endif %}"
         width="{{ artwork.dimensions.width }}" height="{{ artwork.dimensions.height }}">
       </a-image>
     </a-marker>
   </a-scene>
+
   <script>
+    let audio = new Audio("/assets/music/pokemon_music.mp3");
+    audio.loop = true;
+    audio.volume = 0.2;
+    audio.play();
+
     document.addEventListener("alpine:init", () => {
       Alpine.data("appData", () => ({
         isDetected: false,
