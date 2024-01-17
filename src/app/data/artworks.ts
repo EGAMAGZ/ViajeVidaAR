@@ -3,13 +3,29 @@ type Dimensions = {
   height: number;
 }
 
+const DEFAULT_AUDIO_DESCRIPTION_PATH = "/assets/music/pokemon_music.mp3";
+
 export interface Artwork {
   id: number;
   name: string;
   description: string;
   markerPath: string;
   imagePath: string;
+  audioDescriptionPath: string;
   dimensions: Dimensions;
+}
+
+export const DEFAULT_ARTWORK: Artwork = {
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  id: 0,
+  markerPath: "",
+  imagePath: "/assets/bunny.png",
+  name: "Obra de Arte",
+  dimensions: {
+    width: 2,
+    height: 2
+  },
+  audioDescriptionPath: DEFAULT_AUDIO_DESCRIPTION_PATH
 }
 
 export const chilhoodArtworks: Artwork[] = [
@@ -23,6 +39,7 @@ export const chilhoodArtworks: Artwork[] = [
       height: 3,
       width: 2
     },
+    audioDescriptionPath: "/assets/audio/nino_azul.mp3"
   },
   {
     id: 2,
@@ -34,6 +51,7 @@ export const chilhoodArtworks: Artwork[] = [
       height: 2,
       width: 2
     },
+    audioDescriptionPath: "/assets/audio/dos_hermanas.mp3"
   },
   {
     id: 3,
@@ -45,6 +63,7 @@ export const chilhoodArtworks: Artwork[] = [
       height: 2,
       width: 2
     },
+    audioDescriptionPath: "/assets/audio/la_leche_materna.mp3"
   },
   {
     id: 4,
@@ -56,6 +75,7 @@ export const chilhoodArtworks: Artwork[] = [
       height: 3,
       width: 2
     },
+    audioDescriptionPath: "/assets/audio/ninos_en_la_playa.mp3"
   },
   {
     id: 5,
@@ -67,6 +87,7 @@ export const chilhoodArtworks: Artwork[] = [
       height: 2,
       width: 2
     },
+    audioDescriptionPath: "/assets/audio/nino_y_madre.mp3"
   }
 ];
 
@@ -81,6 +102,7 @@ export const adolescenceArtworks: Artwork[] = [
       height: 2,
       width: 2
     },
+    audioDescriptionPath: "/assets/audio/el_beso.mp3"
   },
   {
     id: 7,
@@ -92,6 +114,7 @@ export const adolescenceArtworks: Artwork[] = [
       height: 3,
       width: 2
     },
+    audioDescriptionPath: DEFAULT_AUDIO_DESCRIPTION_PATH
   },
   {
     id: 8,
@@ -103,6 +126,7 @@ export const adolescenceArtworks: Artwork[] = [
       height: 2,
       width: 3
     },
+    audioDescriptionPath: DEFAULT_AUDIO_DESCRIPTION_PATH
   },
   {
     id: 9,
@@ -114,6 +138,7 @@ export const adolescenceArtworks: Artwork[] = [
       height: 2,
       width: 2.5
     },
+    audioDescriptionPath: DEFAULT_AUDIO_DESCRIPTION_PATH
   }
 ];
 
@@ -128,6 +153,7 @@ export const adulthoodArtworks: Artwork[] = [
       height: 3,
       width: 2.5
     },
+    audioDescriptionPath: "/assets/audio/retrato_papa_inocencio_x.mp3"
   },
   {
     id: 11,
@@ -139,6 +165,7 @@ export const adulthoodArtworks: Artwork[] = [
       height: 4,
       width: 2
     },
+    audioDescriptionPath: "/assets/audio/retrato_madame_x.mp3"
   },
   {
     id: 12,
@@ -150,6 +177,7 @@ export const adulthoodArtworks: Artwork[] = [
       height: 2.5,
       width: 2
     },
+    audioDescriptionPath: "/assets/audio/el_sueno.mp3"
   },
   {
     id: 13,
@@ -161,6 +189,7 @@ export const adulthoodArtworks: Artwork[] = [
       height: 2.5,
       width: 2
     },
+    audioDescriptionPath: "/assets/audio/el_matrimonio_arnolfini.mp3"
   }
 ];
 
@@ -175,6 +204,7 @@ export const oldAgeArtworks: Artwork[] = [
       height: 2,
       width: 3.5
     },
+    audioDescriptionPath: "/assets/audio/los_viejos_musicos.mp3"
   },
   {
     id: 15,
@@ -186,6 +216,7 @@ export const oldAgeArtworks: Artwork[] = [
       height: 2.2,
       width: 2
     },
+    audioDescriptionPath: "/assets/audio/el_anciano_pescador.mp3"
   },
   {
     id: 16,
@@ -197,6 +228,7 @@ export const oldAgeArtworks: Artwork[] = [
       height: 2,
       width: 2.5
     },
+    audioDescriptionPath: "/assets/audio/lectura_del_testamento.mp3"
   },
   {
     id: 17,
@@ -208,6 +240,7 @@ export const oldAgeArtworks: Artwork[] = [
       height: 2.2,
       width: 2
     },
+    audioDescriptionPath: "/assets/audio/retrato_doctor_gachet.mp3"
   }
 ];
 

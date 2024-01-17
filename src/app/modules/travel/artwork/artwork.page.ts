@@ -5,21 +5,9 @@ import { SharedModule } from '@/app/shared/modules/shared/shared.module';
 import { environment } from '@/environments/environment';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { generateArTemplate } from '@/app/shared/utils/template';
-import { Artwork, allArtworks } from '@/app/data/artworks';
+import { Artwork, DEFAULT_ARTWORK, allArtworks } from '@/app/data/artworks';
 import { TemplateHttpLoaderService } from '@/app/shared/services/template-http-loader.service';
 import { NavigationService } from '@/app/shared/services/navigation.service';
-
-const DEFAULT_ARTWORK: Artwork = {
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  id: 0,
-  markerPath: "",
-  imagePath: "/assets/bunny.png",
-  name: "Obra de Arte",
-  dimensions: {
-    width: 2,
-    height: 2
-  },
-}
 
 @Component({
   selector: 'app-artwork',
