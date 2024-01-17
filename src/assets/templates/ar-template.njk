@@ -78,12 +78,10 @@
   </a-scene>
 
   <script>
-    let audio = new Audio("{{artwork.audioDescriptionPath}}");
-    audio.loop = true;
-    audio.volume = 0.2;
-    audio.play();
-
     document.addEventListener("alpine:init", () => {
+      let audio = new Audio("{{artwork.audioDescriptionPath}}");
+      audio.volume = 0.2;
+      audio.play();
       Alpine.data("appData", () => ({
         isDetected: false,
         showInfo: false,
